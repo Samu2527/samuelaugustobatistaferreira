@@ -1,42 +1,178 @@
-<!doctype html>
-<html lang="pt br >"
-    <head>
-        <title> Aula1 - Estrutura básica</title>
-        <meta charset="UTF-8">
-    </head>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
 
-    <body>
-        
-        <!--inserir comentários no HTML-->
-        <h1>Hierarquia de títulos</h1>
-        <hr> <!--Insere uma linha na horizontal-->
-        <h1>Nível 1</h1>
-        <h2>Nível 2</h2>
-        <h3>Nível 3</h3>
-        <h4>Nível 4</h4>
-        <h5>Nível 5</h5>
-        <h6>Nível 6</h6>
+<title> CSS externo - Formulário - 13, 17, 24/04 </title>
+<link rel="stylesheet" href="formulario.css">
 
-        <br><!--Inserir quebra de linha-->
-        <hr><!--Insere uma linha horizontal-->
+</head>
 
-        <!--Cor de fonte e tamnho de fonte-->
-        <font color=#A020F0 size=4>
-        <!--Cor de fonte e tamnho de fonte-->
-        <h2 align=center>Titulo Centralizado</h2>
+<body>
+<header> <!--Cabeçalho--> </header>
 
-        <font color=#4B0082 size=4>
-        <h2 align=right>Titulo À Direita</h2>
+<main> <!--Meio--> 
 
-        <font color=#7CFC00 size=4>
-        <h2 align=left> Titulo À Esquerda</h2>
+     
 
-        <p>Aula de programação front end - 23/02 </p>
-        <br>
-        <p>A tag <strong>html</strong> é utilizadda para informar ao navegador que tipo de estrutura está sendo construída, podendo ter <strong> títulos, imagens, links, entre outros.<strong></p>
-        <p>Existem diversas tags do HTML, mas as principais são: <em>title, meta, body, footer e div.</em></p>
-        <P>Dentro dessa tag, é necessário declarar outras duas tags: <u>head e body.</u></p>
+<section class="box">
+    <form>
+    <fieldset>
+    <legend> <strong>
+        Formulário de clientes
+    </legend></strong>
+<section class="inputBox">
+    <input type="text" name="nome" id="name"
+    class="inputUser" required>
+    <label for="name" class="labelinput">Nome completo</label>
+</section>
+
+    <br><br>
+
+<section class="inputBox">
+    <input type="text" name="email" id="email"
+    class="inputUser" required >
+    <label for="email" class="labelinput">
+    Email</label>
+    </section>
+
+    <br><br>
+
+<section class="inputBox">
+    <input type="tel" name="telefone" id="telefone"
+    class="inputUser" required >
+    <label for="telefone" class="labelinput">
+    Telefone</label>
+
+    <p>Sexo:</p>
+    <input type="radio" name="genero" id="feminino"
+    value="feminino" required>
+    <label for="feminino">Feminino</label>
+    <br>
+
+    <input type="radio" name="genero" id="masculino"
+    value="masculino" required>
+    <label for="masculino">Masculino</label>
+    <br>
+
+    <input type="radio" name="genero" id="outro"
+    value="outro" required>
+    <label for="outro">Outro</label>
+    <br><br><br>
+
+    <label for="data_nascimento"><strong>Ano de Nascimento</strong></label>
+    <input type="date" name="data_nascimento" id="data_nascimento"required>
+    <br><br><br>
+
+<section class="inputBox">
+    <input type="text" name="cidade" id="cidade"
+    class="inputUser" required>
+    <label for="cidade" class="labelinput">Cidade</label>
+</section>
+
+    <br><br>
+         
+<section class="inputBox">
+    <input type="text" name="estado" id="estado"
+    class="inputUser" required>
+    <label for="estado" class="labelinput">Estado</label>
+</section>
+
+    <br><br>
+
+<section class="inputBox">
+    <input type="text" name="endereco" id="endereco"
+    class="inputUser" required>
+    <label for="endereco" class="labelinput">Endereço</label>
+</section>
+
+         <br><br>
+
+<section>
+    <input type="submit" value="Enviar Formulário" id="submit"
+    class="inputUser">
+</section>
+
+</section>
+</section>
+</fieldset>
+</form>
+</main>
+<footer> <!--Rodapé--> </footer>
 
 
-    </body>
+
+</body>
 </html>
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+CSS:
+body{
+    background-image: linear-gradient(to right,  	#FF69B4, #7B68EE);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.box{
+    color: white;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(231, 105, 170, 0.87);
+    padding: 15px;
+    border-radius: 15px;
+    width: 20%;
+}
+
+fieldset{
+    border: 3px solid rgb(130, 105, 255);
+
+}
+
+legend{
+    border:1px solid rgb(130, 105, 255);
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(130, 105, 255);
+    border-radius: 8px;
+
+}
+
+.inputBox{
+     position: relative;
+}
+
+.inputUser{
+    background: none;
+    border: none;/*tirar a borda */
+    border-bottom: 1px solid black;
+    outline: none;/*tirar a linha de fora do input*/
+    color: black;
+    font-size: 20px;
+    width: 100%;
+    letter-spacing: 2px;/* espaço entre cada caracter do input*/
+}
+
+.lableinput{  /*animação das labels - nessa parte, as labels irão se encaixar dentro dos inputs*/
+    position: absolute; /*vai ocupar apenas o elemento dela mesma */
+    top: 0px;
+    left: 0px;
+    pointer-events: none; /*qualquer lugar que eu clicar dentro do input, ele vai executar a ação*/
+    transition: 5px;/*transição - para criação de efeitos de animação personalizado*/
+}
+
+
+/* quando clicar no input eu quero que a label vai para cima do input - por isso  a ação é no input */
+
+.inputUser:focus ~ .labelinput, /*executar uma ação na nossa label*/
+.inputUser:valid ~ .labelinput{/* quando o input tiver válido, eu quero 
+                                que ele execute essa ação para a 
+                                label - a informação irá permanecer 
+                                no input,senão irá ficar por cima */
+    top: -20px;
+    font-size:20px;
+    color:dodgerblue;
+}                                
+           
+
