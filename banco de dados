@@ -1,0 +1,25 @@
+create table turmas (
+serie int (10),
+numero_turma varchar (10),
+numeros_alunos char (10),
+disciplina char (15), 
+primary key (serie));
+
+
+create table professor (
+especializacao char (20),
+cpf int (11),
+carga_horario int (10),
+nome char (30), 
+primary key (cpf));
+
+
+
+create table sala (
+numero_sala int (20),
+espaco varchar (10),
+tipo_sala varchar (10),
+bloco varchar (10), 
+primary key (numero_sala));
+
+
